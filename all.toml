@@ -22,6 +22,7 @@ book_parts = [
     "Knowledge/Algebraic Topology",
     "Knowledge/Set Theory",
     "Knowledge/Category Theory",
+    "Knowledge/Galois Theory",
     "Knowledge/Transcendental Number Theory",
     "Knowledge/Mechanics",
     "Knowledge/Reading Snippets",

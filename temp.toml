@@ -3,7 +3,7 @@ output_dir = "/home/felix/Desktop/Notes Exported"
 author = "Felix Nuaptan"
 
 # If batch_compile is true, markdown_file is ignored. It is only used in single-file mode.
-markdown_file = "/home/felix/data/Notes/Notes Root/Knowledge/Basic Algebra/Fields and Vector Spaces.md"
+markdown_file = "/home/felix/data/Notes/Notes Root/Knowledge/Geometry/More Tangent Structures.md"
 batch_compile = false
 
 # Paths should be relative to vault_root.
