@@ -1,6 +1,7 @@
 about-time==4.2.1
 alive-progress==3.2.0
 argparse==1.4.0
+art==6.5
 colorama==0.4.6
 grapheme==0.6.0
 markdown-it-py==3.0.0

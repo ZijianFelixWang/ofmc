@@ -43,7 +43,8 @@ def main():
     # 1. 设置命令行参数解析器g
     #    - description 会在用户使用 -h 或 --help 时显示，非常有用。
     parser = argparse.ArgumentParser(
-        description="A powerful batch compiler for Obsidian notes, converting them to professional PDFs via LaTeX."
+        prog="ofmc",
+        description="Obsidian-Flavored Markdown to LaTeX Compiler."
     )
 
     # 2. 添加 --config 参数
@@ -60,9 +61,18 @@ def main():
         help="Path to the configuration file (default: %(default)s)"
     )
 
+    parser.add_argument(
+        "-n", "--no-logo",
+        dest="no_logo",
+        default=False,
+        action="store_true",
+        help="Disable Ascii Art logo."
+    )
+
     args = parser.parse_args()
 
-    tprint("ofmc", "isometric1")
+    if not args.no_logo:
+        tprint("ofmc", "isometric1")
     print("OFMC Obsidian-Flavored Markdown to LaTeX compiler.")
 
     # 3. 使用解析出的路径加载配置

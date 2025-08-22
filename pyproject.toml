@@ -1,0 +1,29 @@
+# pyproject.toml
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ofmc" # 换成你的项目名
+version = "1.0.0"
+description = "Obsidian-Flavored Markdown to LaTeX Compiler."
+requires-python = ">=3.13" # 根据你的 Python 版本
+dependencies = [
+    "about-time",
+    "alive-progress",
+    "art",
+    "markdown-it-py>=3.0.0",
+    "mdit-py-plugins",
+    "pypdf",
+    "tomli",
+    "tqdm",
+    "colorama",
+    "grapheme",
+    "uuid",
+    "pathlib",
+    "argparse",
+]
+
+[project.scripts]
+ofmc = "ofmc.main:main"
