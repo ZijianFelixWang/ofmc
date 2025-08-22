@@ -1,0 +1,13 @@
+about-time==4.2.1
+alive-progress==3.2.0
+argparse==1.4.0
+colorama==0.4.6
+grapheme==0.6.0
+markdown-it-py==3.0.0
+mdit-py-plugins==0.4.2
+mdurl==0.1.2
+pathlib==1.0.1
+pypdf==5.7.0
+tomli==2.2.1
+tqdm==4.67.1
+uuid==1.30

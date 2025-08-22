@@ -1,0 +1,53 @@
+vault_root = "/home/felix/data/Notes/Notes Root"
+output_dir = "/home/felix/Desktop/Notes Exported"
+author = "Vault as Testsuite"
+
+# If batch_compile is true, markdown_file is ignored. It is only used in single-file mode.
+markdown_file = "/home/felix/Desktop/Notes Root/Lecture Notes/Linear Algebra I/LAI Assignments 2024-2025 III Original.md"
+batch_compile = true
+
+# Paths should be relative to vault_root.
+excluded = [ "Knowledge/**/*Homepage*.md", "Automatic Files/**", "Support Files/Powersidian/Part*.md", "Portals/**", "Lecture Notes/**/*REV*.md", "Lecture Notes/**/*Homepage*.md", "Lecture Notes/**/*Extras*.md" ]
+
+# Document structuring
+enable_simple_merge = false # Compile each file into a PDF, then merge the PDFs.
+enable_book_compile = true  # Compile each file into a TeX chapter, then create a master TeX, then compile into a PDF book.
+book_title = "OFMCompiler (Obsidian Flavored Markdown Compiler) v3 Testsuite"
+book_parts = [
+    "Knowledge/Analysis",
+]
+front_matter = [
+]	# Optional
+back_matter = [
+    "Support Files/Book Titles.md"
+]
+cover_image = "assets/logo.png"
+
+sorting_script = "metadata_sorter.py"
+
+[processors]
+# Post-processors and pre-processors. Lines beginning with $ mean built-in processors. Otherwise plugins.
+post = [
+    # First processor first.
+    "$fix_align_environment",
+    "$replace_custom_arrow_tricks",
+    "$split_inline_display_math",
+    "$replace_tagged_dollars",
+    "$fix_mathbb_k",
+    "$fix_smaller_than",
+    "$fix_kern_syntax",
+    "$replace_array_with_matrix_environments",
+    "$replace_bbox",
+    "$fix_choose",
+    "$fix_tcolorbox_label_tcolorbox",
+    # "fixes/my_extra_fix.py:run_fix" # example processor, does nothing.
+]
+
+pre = [
+    "custom_fixes.py:preprocess_book_references",
+    "custom_fixes.py:fix_markdown_spacing",
+    "$preprocess_nested_blockquotes",
+    "$fix_callout_formulas",
+    "$insert_blank_blockquote_lines",
+    "$normalize_unicode",
+]
