@@ -1,9 +1,30 @@
+"""
+    OFMC: Obsidian-Flavored Markdown to LaTeX Compiler.
+    Copyright (C) 2025  Nuaptan F. Evalisk = Z. F. Wang
+
+    This file is part of OFMC.
+
+    OFMC is free software: you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published
+    by the Free Software Foundation, either version 3 of the License,
+    or (at your option) any later version.
+
+    OFMC is distributed in the hope that it will be useful, but WITHOUT
+    ANY WARRANTY; without even the implied warranty of MERCHANTABILITY
+    or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public
+    License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with OFMC. If not, see <https://www.gnu.org/licenses/>.
+"""
+
 # ofmc/main.py
 import argparse
 import os
 import sys
 import shutil
 import uuid
+from art import *
 from pathlib import Path
 from .parser import OFMCompiler
 from .config import load_config
@@ -40,6 +61,9 @@ def main():
     )
 
     args = parser.parse_args()
+
+    tprint("ofmc", "isometric1")
+    print("OFMC Obsidian-Flavored Markdown to LaTeX compiler.")
 
     # 3. 使用解析出的路径加载配置
     #    - 之前的硬编码 "config.toml" 被替换为 args.config_path
