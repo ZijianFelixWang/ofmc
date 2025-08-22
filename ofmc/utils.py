@@ -211,10 +211,10 @@ def _array_replacer(match: re.Match, target_env: str) -> str:
     这是一个 re.sub 的 "替换函数". 它接收一个匹配对象并决定如何行动。
 
     匹配组 (match.group) 的结构:
-    - group(1): 左括号, e.g., r'\left('
+    - group(1): 左括号, e.g., r'\\left('
     - group(2): 完整的列描述符, e.g., r'{ccc|c}' or r'{}', or None if not present
     - group(3): 数组内容
-    - group(4): 右括号, e.g., r'\right)'
+    - group(4): 右括号, e.g., r'\\right)'
     """
     column_spec = match.group(2)
 
