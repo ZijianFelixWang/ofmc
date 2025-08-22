@@ -61,7 +61,7 @@ post = [
     "$replace_bbox",
     "$fix_choose",
     "$fix_tcolorbox_label_tcolorbox",
-    # "fixes/my_extra_fix.py:run_fix" # example processor, does nothing.
+    "$remove_bad_tex_block_pointers",
 ]
 
 pre = [

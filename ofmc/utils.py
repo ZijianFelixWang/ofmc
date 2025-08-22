@@ -458,6 +458,15 @@ def fix_tcolorbox_label_tcolorbox(content: str) -> str:
 
     return content
 
+_BAD_PTR_LINE = re.compile(
+    r'^[ \t]*\\\^\{\}.*?(?:\r?\n|\r|\Z)',
+    re.MULTILINE,
+)
+
+def remove_bad_tex_block_pointers(text: str) -> str:
+    return _BAD_PTR_LINE.sub('', text)
+
+
 def get_shared_latex_preamble() -> str:
     """
     Returns the shared LaTeX preamble content for all document types.
@@ -575,6 +584,7 @@ BUILTIN_POST_PROCESSORS = {
     "split_inline_display_math": split_inline_display_math,
     "replace_custom_arrow_tricks": replace_custom_arrow_tricks,
     "fix_align_environment": fix_align_environment,
+    "remove_bad_tex_block_pointers": remove_bad_tex_block_pointers,
     # 如果有其他函数也需要加入，就加在这里
 }
 BUILTIN_PRE_PROCESSORS = {
